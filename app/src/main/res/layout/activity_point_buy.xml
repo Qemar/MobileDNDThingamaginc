@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    android:background="#394756"> <!-- похожий тёмно-серый фон -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculator"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#E6EEF6"
+            android:paddingBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Race:"
+                android:textColor="#E6EEF6"
+                android:layout_marginEnd="8dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerRace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Card-like container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#2F3B48"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:clipToPadding="false">
+
+            <!-- Header row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp">
+
+                <TextView android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Attribute" android:textColor="#BFD2E6"/>
+                <TextView android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Base" android:gravity="center" android:textColor="#BFD2E6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="+" android:gravity="center" android:textColor="#BFD2E6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Racial" android:gravity="center" android:textColor="#BFD2E6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="=" android:gravity="center" android:textColor="#BFD2E6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Total" android:gravity="center" android:textColor="#BFD2E6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Mod" android:gravity="center" android:textColor="#BFD2E6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Cost" android:gravity="center" android:textColor="#BFD2E6"/>
+            </LinearLayout>
+
+            <!-- row template: Strength -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="#344654">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Strength"
+                    android:textColor="#E6EEF6"
+                    android:paddingStart="8dp"/>
+
+                <!-- Base with minus / value / plus -->
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <Button
+                        android:id="@+id/btnStrMinus"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="−"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/tvStrBase"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="8"
+                        android:textColor="#E6EEF6"
+                        android:textSize="18sp"
+                        android:padding="4dp"/>
+
+                    <Button
+                        android:id="@+id/btnStrPlus"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:text="+"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="+" android:gravity="center" android:textColor="#E6EEF6"/>
+
+                <TextView
+                    android:id="@+id/tvStrRacial"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="+0"
+                    android:textColor="#E6EEF6"/>
+
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="=" android:gravity="center" android:textColor="#E6EEF6"/>
+
+                <TextView
+                    android:id="@+id/tvStrTotal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="#E6EEF6"/>
+
+                <TextView
+                    android:id="@+id/tvStrMod"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="-1"
+                    android:textColor="#E6EEF6"/>
+
+                <TextView
+                    android:id="@+id/tvStrCost"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#E6EEF6"/>
+            </LinearLayout>
+
+            <!-- copy the structure for other abilities: Dex, Con, Int, Wis, Cha -->
+            <!-- Dexterity -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:paddingTop="10dp" android:paddingBottom="10dp">
+                <TextView android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Dexterity" android:textColor="#E6EEF6" android:paddingStart="8dp"/>
+                <LinearLayout android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <Button android:id="@+id/btnDexMinus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="−" android:textSize="20sp"/>
+                    <TextView android:id="@+id/tvDexBase" android:layout_width="48dp" android:layout_height="wrap_content"
+                        android:gravity="center" android:text="8" android:textColor="#E6EEF6" android:textSize="18sp" android:padding="4dp"/>
+                    <Button android:id="@+id/btnDexPlus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="+" android:textSize="18sp"/>
+                </LinearLayout>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="+" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvDexRacial" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="+0" android:textColor="#E6EEF6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="=" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvDexTotal" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="8" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvDexMod" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="-1" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvDexCost" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="0" android:textColor="#E6EEF6"/>
+            </LinearLayout>
+
+            <!-- Constitution -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:paddingTop="10dp" android:paddingBottom="10dp">
+                <TextView android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Constitution" android:textColor="#E6EEF6" android:paddingStart="8dp"/>
+                <LinearLayout android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <Button android:id="@+id/btnConMinus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="−" android:textSize="20sp"/>
+                    <TextView android:id="@+id/tvConBase" android:layout_width="48dp" android:layout_height="wrap_content"
+                        android:gravity="center" android:text="8" android:textColor="#E6EEF6" android:textSize="18sp" android:padding="4dp"/>
+                    <Button android:id="@+id/btnConPlus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="+" android:textSize="18sp"/>
+                </LinearLayout>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="+" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvConRacial" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="+0" android:textColor="#E6EEF6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="=" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvConTotal" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="8" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvConMod" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="-1" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvConCost" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="0" android:textColor="#E6EEF6"/>
+            </LinearLayout>
+
+            <!-- Intelligence -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:paddingTop="10dp" android:paddingBottom="10dp">
+                <TextView android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Intelligence" android:textColor="#E6EEF6" android:paddingStart="8dp"/>
+                <LinearLayout android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <Button android:id="@+id/btnIntMinus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="−" android:textSize="20sp"/>
+                    <TextView android:id="@+id/tvIntBase" android:layout_width="48dp" android:layout_height="wrap_content"
+                        android:gravity="center" android:text="8" android:textColor="#E6EEF6" android:textSize="18sp" android:padding="4dp"/>
+                    <Button android:id="@+id/btnIntPlus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="+" android:textSize="18sp"/>
+                </LinearLayout>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="+" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvIntRacial" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="+0" android:textColor="#E6EEF6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="=" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvIntTotal" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="8" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvIntMod" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="-1" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvIntCost" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="0" android:textColor="#E6EEF6"/>
+            </LinearLayout>
+
+            <!-- Wisdom -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:paddingTop="10dp" android:paddingBottom="10dp">
+                <TextView android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Wisdom" android:textColor="#E6EEF6" android:paddingStart="8dp"/>
+                <LinearLayout android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <Button android:id="@+id/btnWisMinus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="−" android:textSize="20sp"/>
+                    <TextView android:id="@+id/tvWisBase" android:layout_width="48dp" android:layout_height="wrap_content"
+                        android:gravity="center" android:text="8" android:textColor="#E6EEF6" android:textSize="18sp" android:padding="4dp"/>
+                    <Button android:id="@+id/btnWisPlus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="+" android:textSize="18sp"/>
+                </LinearLayout>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="+" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvWisRacial" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="+0" android:textColor="#E6EEF6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="=" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvWisTotal" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="8" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvWisMod" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="-1" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvWisCost" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="0" android:textColor="#E6EEF6"/>
+            </LinearLayout>
+
+            <!-- Charisma -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:paddingTop="10dp" android:paddingBottom="10dp">
+                <TextView android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="Charisma" android:textColor="#E6EEF6" android:paddingStart="8dp"/>
+                <LinearLayout android:layout_weight="2" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <Button android:id="@+id/btnChaMinus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="−" android:textSize="20sp"/>
+                    <TextView android:id="@+id/tvChaBase" android:layout_width="48dp" android:layout_height="wrap_content"
+                        android:gravity="center" android:text="8" android:textColor="#E6EEF6" android:textSize="18sp" android:padding="4dp"/>
+                    <Button android:id="@+id/btnChaPlus" style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="36dp" android:layout_height="36dp" android:text="+" android:textSize="18sp"/>
+                </LinearLayout>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="+" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvChaRacial" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="+0" android:textColor="#E6EEF6"/>
+                <TextView android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:text="=" android:gravity="center" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvChaTotal" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="8" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvChaMod" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="-1" android:textColor="#E6EEF6"/>
+                <TextView android:id="@+id/tvChaCost" android:layout_weight="1" android:layout_width="0dp"
+                    android:layout_height="wrap_content" android:gravity="center" android:text="0" android:textColor="#E6EEF6"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- bottom controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvTotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Points"
+                android:textStyle="bold"
+                android:textColor="#E6EEF6"/>
+
+            <TextView
+                android:id="@+id/tvUsedPoints"
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/27"
+                android:textStyle="bold"
+                android:textColor="#E6EEF6"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

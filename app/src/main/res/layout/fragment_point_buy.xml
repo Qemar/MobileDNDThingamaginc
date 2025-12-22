@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.myapplication.SmartScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="Attribute Calculator"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- RACE + SUBRACE row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Раса:" />
+
+            <Spinner
+                android:id="@+id/spinnerRace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- CONTAINER FOR SUBRACE -->
+
+            <TextView
+                android:id="@+id/tvSubracePrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:enabled="false"
+                android:focusable="false"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="Подраса:"
+                android:textSize="14sp"
+                android:visibility="invisible" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:translationX="5dp">
+
+                <Spinner
+                    android:id="@+id/spinnerSubrace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:translationX="5dp"
+                    android:visibility="invisible" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <!-- Header -->
+            <TableRow>
+
+                <TextView
+                    android:layout_width="91dp"
+                    android:padding="8dp"
+                    android:text="Attribute" />
+
+                <TextView
+                    android:layout_width="36dp"
+                    android:padding="8dp"
+                    android:text="Base"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Racial"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:padding="8dp"
+                    android:text="Total"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Mod"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Cost"
+                    android:translationX="-10dp" />
+            </TableRow>
+            <!-- Strength -->
+            <TableRow>
+
+                <TextView
+                    android:padding="12dp"
+                    android:text="Strength" />
+
+                <NumberPicker
+                    android:id="@+id/npStr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:id="@+id/tvStrRacial"
+                    android:padding="8dp"
+                    android:text="+0" />
+
+                <TextView
+                    android:padding="1dp"
+                    android:text="="
+                    android:translationX="-15dp" />
+
+                <TextView
+                    android:id="@+id/tvStrTotal"
+                    android:padding="8dp"
+                    android:text="8"
+                    android:translationX="-50dp" />
+
+                <TextView
+                    android:id="@+id/tvStrMod"
+                    android:padding="8dp"
+                    android:text="-1"
+                    android:translationX="-45dp" />
+
+                <TextView
+                    android:id="@+id/tvStrCost"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:translationX="-45dp" />
+            </TableRow>
+            <!-- Dexterity -->
+            <TableRow>
+
+                <TextView
+                    android:padding="12dp"
+                    android:text="Dexterity" />
+
+                <NumberPicker
+                    android:id="@+id/npDex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:id="@+id/tvDexRacial"
+                    android:padding="8dp"
+                    android:text="+0" />
+
+                <TextView
+                    android:padding="1dp"
+                    android:text="="
+                    android:translationX="-15dp" />
+
+                <TextView
+                    android:id="@+id/tvDexTotal"
+                    android:padding="8dp"
+                    android:text="8"
+                    android:translationX="-50dp" />
+
+                <TextView
+                    android:id="@+id/tvDexMod"
+                    android:padding="8dp"
+                    android:text="-1"
+                    android:translationX="-45dp" />
+
+                <TextView
+                    android:id="@+id/tvDexCost"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:translationX="-45dp" />
+            </TableRow>
+            <!-- Constitution -->
+            <TableRow>
+
+                <TextView
+                    android:padding="12dp"
+                    android:text="Constitution" />
+
+                <NumberPicker
+                    android:id="@+id/npCon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:id="@+id/tvConRacial"
+                    android:padding="8dp"
+                    android:text="+0" />
+
+                <TextView
+                    android:padding="1dp"
+                    android:text="="
+                    android:translationX="-15dp" />
+
+                <TextView
+                    android:id="@+id/tvConTotal"
+                    android:padding="8dp"
+                    android:text="8"
+                    android:translationX="-50dp" />
+
+                <TextView
+                    android:id="@+id/tvConMod"
+                    android:padding="8dp"
+                    android:text="-1"
+                    android:translationX="-45dp" />
+
+                <TextView
+                    android:id="@+id/tvConCost"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:translationX="-45dp" />
+            </TableRow>
+            <!-- Intelligence -->
+            <TableRow>
+
+                <TextView
+                    android:padding="12dp"
+                    android:text="Intelligence" />
+
+                <NumberPicker
+                    android:id="@+id/npInt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:id="@+id/tvIntRacial"
+                    android:padding="8dp"
+                    android:text="+0" />
+
+                <TextView
+                    android:padding="1dp"
+                    android:text="="
+                    android:translationX="-15dp" />
+
+                <TextView
+                    android:id="@+id/tvIntTotal"
+                    android:padding="8dp"
+                    android:text="8"
+                    android:translationX="-50dp" />
+
+                <TextView
+                    android:id="@+id/tvIntMod"
+                    android:padding="8dp"
+                    android:text="-1"
+                    android:translationX="-45dp" />
+
+                <TextView
+                    android:id="@+id/tvIntCost"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:translationX="-45dp" />
+            </TableRow>
+            <!-- Wisdom -->
+            <TableRow>
+
+                <TextView
+                    android:padding="12dp"
+                    android:text="Wisdom" />
+
+                <NumberPicker
+                    android:id="@+id/npWis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:id="@+id/tvWisRacial"
+                    android:padding="8dp"
+                    android:text="+0" />
+
+                <TextView
+                    android:padding="1dp"
+                    android:text="="
+                    android:translationX="-15dp" />
+
+                <TextView
+                    android:id="@+id/tvWisTotal"
+                    android:padding="8dp"
+                    android:text="8"
+                    android:translationX="-50dp" />
+
+                <TextView
+                    android:id="@+id/tvWisMod"
+                    android:padding="8dp"
+                    android:text="-1"
+                    android:translationX="-45dp" />
+
+                <TextView
+                    android:id="@+id/tvWisCost"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:translationX="-45dp" />
+            </TableRow>
+            <!-- Charisma -->
+            <TableRow>
+
+                <TextView
+                    android:padding="12dp"
+                    android:text="Charisma" />
+
+                <NumberPicker
+                    android:id="@+id/npCha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:translationX="-10dp" />
+
+                <TextView
+                    android:id="@+id/tvChaRacial"
+                    android:padding="8dp"
+                    android:text="+0" />
+
+                <TextView
+                    android:padding="1dp"
+                    android:text="="
+                    android:translationX="-15dp" />
+
+                <TextView
+                    android:id="@+id/tvChaTotal"
+                    android:padding="8dp"
+                    android:text="8"
+                    android:translationX="-50dp" />
+
+                <TextView
+                    android:id="@+id/tvChaMod"
+                    android:padding="8dp"
+                    android:text="-1"
+                    android:translationX="-45dp" />
+
+                <TextView
+                    android:id="@+id/tvChaCost"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:translationX="-45dp" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- bottom controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset" />
+
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvTotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Points"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvUsedPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="0/27"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/tvRaceDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Здесь будет информация о выбранной расе и подрасе"
+            android:padding="8dp" />
+    </LinearLayout>
+</com.example.myapplication.SmartScrollView>
