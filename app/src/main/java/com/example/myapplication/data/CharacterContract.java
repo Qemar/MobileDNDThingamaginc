@@ -39,6 +39,7 @@ public final class CharacterContract {
         public static final String COLUMN_CURRENT_HP = "current_hp";
         public static final String COLUMN_MAX_HP = "max_hp";
 
+
         // timestamp
         public static final String COLUMN_CREATED_TS = "created_ts";
     }
